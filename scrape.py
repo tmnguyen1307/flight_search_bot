@@ -76,7 +76,7 @@ def extract_data(conn):
             insert_flight(conn, flight)
 
 def post_to_slack(message):
-    sc = slack.WebClient('xoxb-707748598388-701204914258-lRbq9UNtY2mAcjhRuJGHTr3S')
+    sc = slack.WebClient(token)
     sc.api_call(
         "chat.postMessage", json={'channel':'#flight-bot', 'text':message,
         'username':'flight_search_bot', 'icon_emoji':':robot_face:'})
